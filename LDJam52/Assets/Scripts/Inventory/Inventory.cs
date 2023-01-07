@@ -73,7 +73,21 @@ public class Inventory : MonoBehaviour
 
 	void OnDropItem()
 	{
-		if(items[currentlySelectedItem].item != null && items[currentlySelectedItem].itemIndex != -1)
+		if (player.GetComponent<MovementCardinal>().inBase)
+		{
+			for(int i = 0; i < items.Count; i++)
+			{
+				if (items[i].item != null && items[i].itemIndex != -1)
+				{
+					// Visual for selling item
+
+					items[currentlySelectedItem].item.sprite = null;
+					items[currentlySelectedItem].itemIndex = -1;
+					items[currentlySelectedItem].item.color = new Color(1, 1, 1, 0);
+				}
+			}
+		}
+		else if(items[currentlySelectedItem].item != null && items[currentlySelectedItem].itemIndex != -1)
 		{
 			Instantiate(GameManager.Instance.items[items[currentlySelectedItem].itemIndex], player.transform.position, Quaternion.identity);
 			items[currentlySelectedItem].item.sprite = null;

@@ -8,6 +8,8 @@ public class MovementCardinal : MonoBehaviour
 	PlayerData playerData;
 	Rigidbody2D rb;
 
+	public bool inBase;
+
 	Vector2 inputDirection = new Vector2();
 	Vector2 currentAcceleration = new Vector2();
 
@@ -66,5 +68,21 @@ public class MovementCardinal : MonoBehaviour
 	public void TurnOffGravity()
 	{
 		rb.gravityScale = 0;
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if(collision.gameObject.tag == "Base")
+		{
+			inBase = true;
+		}
+	}
+
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.gameObject.tag == "Base")
+		{
+			inBase = false;
+		}
 	}
 }
