@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
 	public static GameManager Instance;
 
 	public GameState gameState = GameState.Default;
+
+	public List<Sprite> images = new List<Sprite>();
+	public List<GameObject> items = new List<GameObject>();
 
 	public void Awake()
 	{
@@ -31,4 +35,9 @@ public class GameManager : MonoBehaviour
     {
 
     }
+
+	public void GetItem(Sprite image)
+	{
+		switch(image)
+	}
 }

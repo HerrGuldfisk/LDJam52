@@ -1,20 +1,83 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Inventory : MonoBehaviour
 {
-	List<Pickables> items = new List<Pickables>();
+	List<InventorySlot> items = new List<InventorySlot>();
+	private int currentlySelectedItem = 0;
+	public Transform player;
 
-    // Start is called before the first frame update
     void Start()
     {
+		foreach(Transform inventorySlot in transform)
+		{
+			if (inventorySlot.GetComponent<InventorySlot>())
+			{
+				items.Add(inventorySlot.GetComponent<InventorySlot>());
+				inventorySlot.GetComponent<InventorySlot>().HideOutline();
+			}
+		}
 
-    }
+		SetSelectedItem(0);
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
+    void SetSelectedItem(int number)
+	{
+		currentlySelectedItem = number;
 
-    }
+		foreach(InventorySlot slot in items)
+		{
+			slot.HideOutline();
+		}
+
+		items[number].ShowOutline();
+	}
+
+	void OnBumper(InputValue value)
+	{
+		float bumperValue = value.Get<float>();
+
+		if(bumperValue == 1)
+		{
+			if(currentlySelectedItem < items.Count - 1)
+			{
+				SetSelectedItem(currentlySelectedItem + 1);
+			}
+		}
+
+		if (bumperValue == -1)
+		{
+			if (currentlySelectedItem > 0)
+			{
+				SetSelectedItem(currentlySelectedItem - 1);
+			}
+		}
+	}
+
+	public void PickUp(GameObject item)
+	{
+		for(int i = 0; i < items.Count; i++)
+		{
+			if (items[i].item.sprite == null)
+			{
+				items[i].item.sprite = GameManager.Instance.itemToImage[item];
+				Debug.Log(GameManager.Instance.itemToImage[item].name);
+				items[i].item.color = new Color(1, 1, 1, 1);
+				Destroy(item.gameObject);
+				return;
+			}
+		}
+	}
+
+	void OnDropItem()
+	{
+		if(items[currentlySelectedItem].item != null)
+		{
+			Instantiate(GameManager.Instance.imageToItem[items[currentlySelectedItem].item.sprite]);
+			items[currentlySelectedItem].item.sprite = null;
+			items[currentlySelectedItem].item.color = new Color(1, 1, 1, 0);
+		}
+	}
 }

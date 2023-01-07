@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Claw : MonoBehaviour
 {
+	public Inventory inventory;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +29,10 @@ public class Claw : MonoBehaviour
 
 			foreach(Collider2D col in results)
 			{
-				if (col.gameObject.tag == "Pickable")
+				if (col.gameObject.GetComponent<Pickables>())
 				{
-					// Pick up logic
+					inventory.PickUp(col.gameObject);
 
-					Destroy(col.gameObject);
 					return;
 				}
 			}
@@ -43,7 +44,7 @@ public class Claw : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "Pickable")
 		{
-			Debug.Log("Pickable");
+
 		}
 		// Display pick up help text
 	}

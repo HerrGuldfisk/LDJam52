@@ -5,5 +5,21 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-	public Pickables item;
+	public Image item;
+	GameObject selector;
+
+	private void Start()
+	{
+		selector = transform.GetChild(0).gameObject;
+	}
+
+	public void ShowOutline()
+	{
+		selector.SetActive(true);
+	}
+
+	public void HideOutline()
+	{
+		selector.SetActive(false);
+	}
 }
