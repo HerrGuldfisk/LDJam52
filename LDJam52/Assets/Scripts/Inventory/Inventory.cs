@@ -56,6 +56,27 @@ public class Inventory : MonoBehaviour
 		}
 	}
 
+	void OnScroll(InputValue value)
+	{
+		Vector2 scrollValue = value.Get<Vector2>();
+
+		if (scrollValue.y < 0)
+		{
+			if (currentlySelectedItem < items.Count - 1)
+			{
+				SetSelectedItem(currentlySelectedItem + 1);
+			}
+		}
+
+		if (scrollValue.y > 0)
+		{
+			if (currentlySelectedItem > 0)
+			{
+				SetSelectedItem(currentlySelectedItem - 1);
+			}
+		}
+	}
+
 	public void PickUp(Pickables item)
 	{
 		for(int i = 0; i < items.Count; i++)
@@ -80,10 +101,10 @@ public class Inventory : MonoBehaviour
 				if (items[i].item != null && items[i].itemIndex != -1)
 				{
 					// Visual for selling item
-
-					items[currentlySelectedItem].item.sprite = null;
-					items[currentlySelectedItem].itemIndex = -1;
-					items[currentlySelectedItem].item.color = new Color(1, 1, 1, 0);
+					Debug.Log("Selling item");
+					items[i].item.sprite = null;
+					items[i].itemIndex = -1;
+					items[i].item.color = new Color(1, 1, 1, 0);
 				}
 			}
 		}
