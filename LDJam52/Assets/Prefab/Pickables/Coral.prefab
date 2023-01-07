@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3768903731919316228}
   - component: {fileID: 3768903731919316229}
   - component: {fileID: 3768903731919316346}
-  - component: {fileID: -5669698454761879441}
+  - component: {fileID: 2988773960595074524}
   m_Layer: 0
   m_Name: Coral
   m_TagString: Pickable
@@ -111,7 +111,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
---- !u!114 &-5669698454761879441
+--- !u!114 &2988773960595074524
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,6 +120,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3768903731919316347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fc0df0174996954a873cea840b02e4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 386e73d0c7b861f4abdb098374109edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  index: 0
+  index: 0

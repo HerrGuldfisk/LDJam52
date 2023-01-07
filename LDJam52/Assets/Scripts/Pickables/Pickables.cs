@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Pickables : MonoBehaviour
 {
-
+	public int index;
 }

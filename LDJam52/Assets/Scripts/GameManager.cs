@@ -36,9 +36,13 @@ public class GameManager : MonoBehaviour
 
     }
 
-	public void GetItem(Sprite image)
+	public Sprite GetImage(Pickables item)
 	{
-		// int index = images.FindIndex(a => a.GetType() == typeof(Coral));
+		return images[item.index];
+	}
+
+	public void InstantiateObject()
+	{
 
 	}
 }

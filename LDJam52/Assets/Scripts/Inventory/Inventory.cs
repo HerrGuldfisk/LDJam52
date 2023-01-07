@@ -55,15 +55,14 @@ public class Inventory : MonoBehaviour
 			}
 		}
 	}
-	 /*
-	public void PickUp(GameObject item)
+
+	public void PickUp(Pickables item)
 	{
 		for(int i = 0; i < items.Count; i++)
 		{
 			if (items[i].item.sprite == null)
 			{
-				items[i].item.sprite = GameManager.Instance.itemToImage[item];
-				Debug.Log(GameManager.Instance.itemToImage[item].name);
+				items[i].item.sprite = GameManager.Instance.GetImage(item);
 				items[i].item.color = new Color(1, 1, 1, 1);
 				Destroy(item.gameObject);
 				return;
@@ -75,10 +74,12 @@ public class Inventory : MonoBehaviour
 	{
 		if(items[currentlySelectedItem].item != null)
 		{
+			/*
 			Instantiate(GameManager.Instance.imageToItem[items[currentlySelectedItem].item.sprite]);
 			items[currentlySelectedItem].item.sprite = null;
 			items[currentlySelectedItem].item.color = new Color(1, 1, 1, 0);
+			*/
 		}
 	}
-	*/
+
 }

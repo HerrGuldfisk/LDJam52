@@ -31,7 +31,7 @@ public class Claw : MonoBehaviour
 			{
 				if (col.gameObject.GetComponent<Pickables>())
 				{
-					// inventory.PickUp(col.gameObject);
+					inventory.PickUp(col.gameObject.GetComponent<Pickables>());
 
 					return;
 				}
