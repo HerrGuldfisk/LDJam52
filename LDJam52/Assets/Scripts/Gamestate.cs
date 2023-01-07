@@ -9,5 +9,6 @@ public class Gamestate : MonoBehaviour
 
 public enum GameState
 {
-	Default
+	Default,
+	Aitbourne
 }
