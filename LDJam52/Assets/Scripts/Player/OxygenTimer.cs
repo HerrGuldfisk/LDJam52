@@ -14,8 +14,6 @@ public class OxygenTimer : MonoBehaviour
 
     public bool timerIsRunning = false;
 
-    public Text timeText;
-
     public PlayerData pd;
 
     public static OxygenTimer instance;
@@ -44,7 +42,6 @@ public class OxygenTimer : MonoBehaviour
                 if (timeRemaining > 0)
                 {
                     timeRemaining -= Time.deltaTime;
-                    DisplayTime(timeRemaining);
                 }
                 else
                 {
@@ -96,13 +93,5 @@ public class OxygenTimer : MonoBehaviour
         PauseTimer();
 
         GameManager.Instance.gameState = GameState.Death;
-    }
-
-    void DisplayTime(float timeToDisplay)
-    {
-        timeToDisplay += 1;
-        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
-        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

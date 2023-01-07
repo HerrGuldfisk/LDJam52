@@ -11,21 +11,23 @@ public class HealthBar : MonoBehaviour
     public float currentHealth;
     public float maxHealth;
 
-    public Text healthText;
-
     public PlayerData pd;
 
     // Start is called before the first frame update
     void Start()
     {
         healthBar.maxValue = pd.maxHealth;
-        pd.currentHealth = pd.maxHealth * 0.8f;
+        pd.currentHealth = pd.maxHealth * 0.75f;
 
         healthBar.value = pd.currentHealth;
     }
 
     private void Update()
     {
+        if (pd.currentHealth <= 0)
+        {
+            OutOfHealth();
+        }
 
         healthBar.maxValue = pd.maxHealth;
         healthBar.value = pd.currentHealth;
