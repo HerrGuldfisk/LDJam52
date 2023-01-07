@@ -60,7 +60,7 @@ public class MovementCardinal : MonoBehaviour
 
 	public void TurnOnGravity()
 	{
-		rb.gravityScale = 1;
+		rb.gravityScale = 0.85f;
 	}
 
 	public void TurnOffGravity()

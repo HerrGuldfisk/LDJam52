@@ -11,12 +11,7 @@ public class PlayerPositionCheck : MonoBehaviour
     private float yPos;
 
     public float ySurface = 0.0f;
-    public float yAirzone;
-
-    void Start()
-    {
-        
-    }
+    public float yAirzone = 0.5f;
 
     // Update is called once per frame
     void Update()
