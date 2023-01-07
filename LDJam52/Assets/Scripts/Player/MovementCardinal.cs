@@ -1,20 +1,58 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MovementCardinal : MonoBehaviour
 {
 	PlayerData playerData;
+	Rigidbody2D rb;
 
-    // Start is called before the first frame update
+	Vector2 inputDirection = new Vector2();
+	Vector2 currentAcceleration = new Vector2();
+
     void Start()
     {
+		rb = GetComponent<Rigidbody2D>();
 		playerData = GetComponent<PlayerData>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void FixedUpdate()
     {
+		if (GameManager.Instance.gameState == GameState.Default)
+		{
+			MovePlayer(inputDirection);
+		}
 
     }
+
+	void OnCardinalMove(InputValue value)
+	{
+		inputDirection = value.Get<Vector2>();
+	}
+
+	void MovePlayer(Vector2 direction)
+	{
+		currentAcceleration = direction * playerData.cardinalAccelleration;
+
+		if (currentAcceleration.magnitude > 0)
+		{
+			float factor = (Vector2.Dot(rb.velocity.normalized, direction) - 2) * -1;
+
+			rb.velocity += factor * currentAcceleration * Time.fixedDeltaTime;
+
+		}
+		else
+		{
+			rb.velocity -= rb.velocity * Time.fixedDeltaTime;
+		}
+
+		if (rb.velocity.magnitude > playerData.cardinalSpeedMAX)
+		{
+			rb.velocity = rb.velocity.normalized * playerData.cardinalSpeedMAX;
+		}
+
+
+	}
 }
