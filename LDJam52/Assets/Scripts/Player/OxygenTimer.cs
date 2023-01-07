@@ -10,8 +10,7 @@ public class OxygenTimer : MonoBehaviour
     public float timeRemaining;
     public float maxTime;
 
-    private WaitForSeconds regenTick = new WaitForSeconds(0.1f);
-    private Coroutine regen;
+    public bool regenOxygen;
 
     public bool timerIsRunning = false;
 
@@ -38,19 +37,30 @@ public class OxygenTimer : MonoBehaviour
 
     void Update()
     {
-        if (timerIsRunning)
+        if (!regenOxygen)
         {
-            if (timeRemaining > 0)
+            if (timerIsRunning)
             {
-                timeRemaining -= Time.deltaTime;
-                DisplayTime(timeRemaining);
-            }
-            else
-            {
-                OutOfOxygen();
-            }
+                if (timeRemaining > 0)
+                {
+                    timeRemaining -= Time.deltaTime;
+                    DisplayTime(timeRemaining);
+                }
+                else
+                {
+                    OutOfOxygen();
+                }
 
-            OxygenBar.value = timeRemaining;
+                OxygenBar.value = timeRemaining;
+            }
+        }
+        else
+        {
+            if (timeRemaining < maxTime)
+            {
+                timeRemaining += maxTime / 2 * Time.deltaTime;
+                OxygenBar.value = timeRemaining;
+            }
         }
     }
 
@@ -64,35 +74,18 @@ public class OxygenTimer : MonoBehaviour
         timerIsRunning = false;
     }
 
+    public void UpdateOxygenMaxLimit()
+    {
+        maxTime = pd.oxygenMax;
+        OxygenBar.maxValue = maxTime;
+    }
+
     public void ResetTimer()
     {
         PauseTimer();
-        maxTime = pd.oxygenMax;
-        OxygenBar.maxValue = maxTime;
+        UpdateOxygenMaxLimit();
         timeRemaining = maxTime;
         StartTimer();
-    }
-
-    public void StartRegenOxygen()
-    {
-        PauseTimer();
-        if (regen != null)
-            StopCoroutine(regen);
-
-        regen = StartCoroutine(RegenOxygen());
-    }
-
-    private IEnumerator RegenOxygen()
-    {
-        yield return new WaitForSeconds(0.5f);
-
-        while (timeRemaining < maxTime)
-        {
-            timeRemaining += maxTime / 60;
-            OxygenBar.value = timeRemaining;
-            yield return regenTick;
-        }
-        regen = null;
     }
 
     public void OutOfOxygen()
