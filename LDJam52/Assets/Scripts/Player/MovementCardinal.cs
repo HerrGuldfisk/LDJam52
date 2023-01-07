@@ -22,10 +22,14 @@ public class MovementCardinal : MonoBehaviour
     {
 		if (GameManager.Instance.gameState == GameState.Default)
 		{
+			TurnOffGravity();
 			MovePlayer(inputDirection);
 		}
-
-    }
+		else if (GameManager.Instance.gameState == GameState.Airbourne)
+		{
+			TurnOnGravity();
+		}
+	}
 
 	void OnCardinalMove(InputValue value)
 	{
@@ -52,7 +56,15 @@ public class MovementCardinal : MonoBehaviour
 		{
 			rb.velocity = rb.velocity.normalized * playerData.cardinalSpeedMAX;
 		}
+	}
 
+	public void TurnOnGravity()
+	{
+		rb.gravityScale = 1;
+	}
 
+	public void TurnOffGravity()
+	{
+		rb.gravityScale = 0;
 	}
 }

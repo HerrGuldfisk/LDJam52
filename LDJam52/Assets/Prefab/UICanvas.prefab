@@ -182,12 +182,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b904b5c95b1f644832034844b6355e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OxygenBar: {fileID: 0}
+  OxygenBar: {fileID: 3054528735521368396}
   timeRemaining: 0
   maxTime: 0
+  regenOxygen: 0
   timerIsRunning: 0
   timeText: {fileID: 7849854083573249357}
-  pd: {fileID: 0}
+  pd: {fileID: 8619164726561995493, guid: 937a47ea915cf504ab51fc5dbe04b774, type: 3}
 --- !u!1 &3054528736632877859
 GameObject:
   m_ObjectHideFlags: 0
