@@ -5,16 +5,37 @@ using UnityEngine.UI;
 
 public class OxygenTimer : MonoBehaviour
 {
-    public float timeRemaining = 10;
+    public Slider OxygenBar;
+
+    public float timeRemaining;
+    public float maxTime;
+
+    private WaitForSeconds regenTick = new WaitForSeconds(0.1f);
+    private Coroutine regen;
+
     public bool timerIsRunning = false;
+
     public Text timeText;
-    PlayerData pd;
+
+    public PlayerData pd;
+
+    public static OxygenTimer instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
-        // Starts the timer automatically
-        timerIsRunning = true;
+        maxTime = pd.oxygenMax;
+
+        timeRemaining = maxTime;
+
+        OxygenBar.maxValue = maxTime;
+        OxygenBar.value = maxTime;
     }
+
     void Update()
     {
         if (timerIsRunning)
@@ -26,12 +47,62 @@ public class OxygenTimer : MonoBehaviour
             }
             else
             {
-                Debug.Log("Time has run out!");
-                timeRemaining = 0;
-                timerIsRunning = false;
+                OutOfOxygen();
             }
+
+            OxygenBar.value = timeRemaining;
         }
     }
+
+    public void StartTimer()
+    {
+        timerIsRunning = true;
+    }
+
+    public void PauseTimer()
+    {
+        timerIsRunning = false;
+    }
+
+    public void ResetTimer()
+    {
+        PauseTimer();
+        maxTime = pd.oxygenMax;
+        OxygenBar.maxValue = maxTime;
+        timeRemaining = maxTime;
+        StartTimer();
+    }
+
+    public void StartRegenOxygen()
+    {
+        PauseTimer();
+        if (regen != null)
+            StopCoroutine(regen);
+
+        regen = StartCoroutine(RegenOxygen());
+    }
+
+    private IEnumerator RegenOxygen()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        while (timeRemaining < maxTime)
+        {
+            timeRemaining += maxTime / 60;
+            OxygenBar.value = timeRemaining;
+            yield return regenTick;
+        }
+        regen = null;
+    }
+
+    public void OutOfOxygen()
+    {
+        Debug.Log("Time has run out!");
+
+        timeRemaining = 0;
+        PauseTimer();
+    }
+
     void DisplayTime(float timeToDisplay)
     {
         timeToDisplay += 1;
