@@ -26,6 +26,7 @@ public class HealthBar : MonoBehaviour
 
     private void Update()
     {
+
         healthBar.maxValue = pd.maxHealth;
         healthBar.value = pd.currentHealth;
     }
