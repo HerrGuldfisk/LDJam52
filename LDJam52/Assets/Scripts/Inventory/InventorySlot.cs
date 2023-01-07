@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
 	public Image item;
+	public int itemIndex = -1;
 	GameObject selector;
 
 	private void Start()

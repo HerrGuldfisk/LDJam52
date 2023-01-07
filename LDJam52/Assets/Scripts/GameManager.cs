@@ -40,9 +40,4 @@ public class GameManager : MonoBehaviour
 	{
 		return images[item.index];
 	}
-
-	public void InstantiateObject()
-	{
-
-	}
 }

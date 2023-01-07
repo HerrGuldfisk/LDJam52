@@ -10,5 +10,6 @@ public class Gamestate : MonoBehaviour
 public enum GameState
 {
 	Default,
-	Airbourne
+	Airbourne,
+	Death
 }

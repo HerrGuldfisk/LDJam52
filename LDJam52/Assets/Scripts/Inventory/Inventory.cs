@@ -63,6 +63,7 @@ public class Inventory : MonoBehaviour
 			if (items[i].item.sprite == null)
 			{
 				items[i].item.sprite = GameManager.Instance.GetImage(item);
+				items[i].itemIndex = item.index;
 				items[i].item.color = new Color(1, 1, 1, 1);
 				Destroy(item.gameObject);
 				return;
@@ -72,13 +73,12 @@ public class Inventory : MonoBehaviour
 
 	void OnDropItem()
 	{
-		if(items[currentlySelectedItem].item != null)
+		if(items[currentlySelectedItem].item != null && items[currentlySelectedItem].itemIndex != -1)
 		{
-			/*
-			Instantiate(GameManager.Instance.imageToItem[items[currentlySelectedItem].item.sprite]);
+			Instantiate(GameManager.Instance.items[items[currentlySelectedItem].itemIndex], player.transform.position, Quaternion.identity);
 			items[currentlySelectedItem].item.sprite = null;
+			items[currentlySelectedItem].itemIndex = -1;
 			items[currentlySelectedItem].item.color = new Color(1, 1, 1, 0);
-			*/
 		}
 	}
 
