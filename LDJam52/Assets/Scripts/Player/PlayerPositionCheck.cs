@@ -10,8 +10,8 @@ public class PlayerPositionCheck : MonoBehaviour
     private float xPos;
     private float yPos;
 
-    public float ySurface = 0.0f;
-    public float yAirzone = 0.5f;
+    private float ySurface = 0.0f;
+    private float yAirzone = -1f;
 
     // Update is called once per frame
     void Update()

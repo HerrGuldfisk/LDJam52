@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3120581973879316524}
   - component: {fileID: 634324453078793447}
   - component: {fileID: 3079396858204336644}
-  m_Layer: 0
+  - component: {fileID: 1370984326}
+  m_Layer: 6
   m_Name: Claw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,6 +114,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18a0245c773f9049b152b6fe3396d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 2772310943079220757, guid: 96e3babd76a09884f9dadc9dfd4f0d93, type: 3}
+--- !u!114 &1370984326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7738436673344908677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 43791153459dd8546a05c2390b9c653b, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: General
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &8619164726398090822
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +154,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8619164726398090821}
-  m_Layer: 0
+  - component: {fileID: 8036124416678379599}
+  - component: {fileID: 8940848770983681516}
+  m_Layer: 6
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,6 +180,35 @@ Transform:
   m_Father: {fileID: 8619164726561995494}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &8036124416678379599
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8619164726398090822}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 3, y: 1}
+  m_Direction: 1
+--- !u!114 &8940848770983681516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8619164726398090822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94bdad1830582d54da1ab46e5aa54be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pd: {fileID: 8619164726561995493}
 --- !u!1 &8619164726561995489
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +223,7 @@ GameObject:
   - component: {fileID: 9012319854560156793}
   - component: {fileID: 8619164726561995493}
   - component: {fileID: 8619164726561995492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,6 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd325a839377cbf4286414ee0cc25791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inBase: 0
 --- !u!114 &9012319854560156793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,10 +300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 860637992e17b4548996530e7f8f2168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oxygenTimer: {fileID: 0}
-  xPos: 0
-  yPos: 0
-  ySurface: 0.5
+  oxygenTimer: {fileID: 4024642077405233623, guid: 525cfff6043e5ff438d2bce9fcb4d2cf, type: 3}
+  movementCardinal: {fileID: 0}
 --- !u!114 &8619164726561995493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +317,9 @@ MonoBehaviour:
   cardinalSpeedMAX: 5
   cardinalAccelleration: 1.5
   oxygenMax: 30
+  maxHealth: 100
+  currentHealth: 0
+  inventorySpace: 3
 --- !u!50 &8619164726561995492
 Rigidbody2D:
   serializedVersion: 4
@@ -286,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8619164726789844752}
   - component: {fileID: 8619164726789844759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Uboat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8619164727552559662}
   - component: {fileID: 8619164727552559661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Forward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
