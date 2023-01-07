@@ -9,5 +9,8 @@ public class PlayerData : MonoBehaviour
 
 	public float oxygenMax = 30f;
 
+	public float maxHealth = 100f;
+	public float currentHealth;
+
 	public int inventorySpace = 3;
 }
