@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
 
 	public void GetItem(Sprite image)
 	{
-		switch(image)
+		// int index = images.FindIndex(a => a.GetType() == typeof(Coral));
+
 	}
 }

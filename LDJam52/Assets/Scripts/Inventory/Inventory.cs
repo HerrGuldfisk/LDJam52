@@ -55,7 +55,7 @@ public class Inventory : MonoBehaviour
 			}
 		}
 	}
-
+	 /*
 	public void PickUp(GameObject item)
 	{
 		for(int i = 0; i < items.Count; i++)
@@ -80,4 +80,5 @@ public class Inventory : MonoBehaviour
 			items[currentlySelectedItem].item.color = new Color(1, 1, 1, 0);
 		}
 	}
+	*/
 }
