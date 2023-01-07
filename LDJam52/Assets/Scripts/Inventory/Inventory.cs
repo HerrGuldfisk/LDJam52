@@ -56,6 +56,27 @@ public class Inventory : MonoBehaviour
 		}
 	}
 
+	void OnScroll(InputValue value)
+	{
+		Vector2 scrollValue = value.Get<Vector2>();
+
+		if (scrollValue.y < 0)
+		{
+			if (currentlySelectedItem < items.Count - 1)
+			{
+				SetSelectedItem(currentlySelectedItem + 1);
+			}
+		}
+
+		if (scrollValue.y > 0)
+		{
+			if (currentlySelectedItem > 0)
+			{
+				SetSelectedItem(currentlySelectedItem - 1);
+			}
+		}
+	}
+
 	public void PickUp(Pickables item)
 	{
 		for(int i = 0; i < items.Count; i++)
