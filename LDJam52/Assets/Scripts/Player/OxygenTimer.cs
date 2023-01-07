@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class OxygenTimer : MonoBehaviour
 {
-    public Slider OxygenBar;
+    public Slider oxygenBar;
 
     public float timeRemaining;
     public float maxTime;
@@ -31,8 +31,8 @@ public class OxygenTimer : MonoBehaviour
 
         timeRemaining = maxTime;
 
-        OxygenBar.maxValue = maxTime;
-        OxygenBar.value = maxTime;
+        oxygenBar.maxValue = maxTime;
+        oxygenBar.value = maxTime;
     }
 
     void Update()
@@ -51,7 +51,7 @@ public class OxygenTimer : MonoBehaviour
                     OutOfOxygen();
                 }
 
-                OxygenBar.value = timeRemaining;
+                oxygenBar.value = timeRemaining;
             }
         }
         else
@@ -59,7 +59,7 @@ public class OxygenTimer : MonoBehaviour
             if (timeRemaining < maxTime)
             {
                 timeRemaining += maxTime / 2 * Time.deltaTime;
-                OxygenBar.value = timeRemaining;
+                oxygenBar.value = timeRemaining;
             }
         }
     }
@@ -77,7 +77,7 @@ public class OxygenTimer : MonoBehaviour
     public void UpdateOxygenMaxLimit()
     {
         maxTime = pd.oxygenMax;
-        OxygenBar.maxValue = maxTime;
+        oxygenBar.maxValue = maxTime;
     }
 
     public void ResetTimer()
