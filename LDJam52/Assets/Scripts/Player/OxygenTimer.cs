@@ -94,6 +94,8 @@ public class OxygenTimer : MonoBehaviour
 
         timeRemaining = 0;
         PauseTimer();
+
+        GameManager.Instance.gameState = GameState.Death;
     }
 
     void DisplayTime(float timeToDisplay)

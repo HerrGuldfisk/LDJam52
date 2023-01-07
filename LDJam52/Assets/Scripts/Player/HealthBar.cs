@@ -19,12 +19,20 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         healthBar.maxValue = pd.maxHealth;
-        healthBar.value = pd.currenHealth;
+        pd.currentHealth = pd.maxHealth * 0.8f;
+
+        healthBar.value = pd.currentHealth;
     }
 
     private void Update()
     {
+
         healthBar.maxValue = pd.maxHealth;
         healthBar.value = pd.currentHealth;
+    }
+
+    private void OutOfHealth()
+    {
+        GameManager.Instance.gameState = GameState.Death;
     }
 }
