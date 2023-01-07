@@ -8,4 +8,6 @@ public class PlayerData : MonoBehaviour
 	public float cardinalAccelleration = 1.5f;
 
 	public float oxygenMax = 30f;
+
+	public int inventorySpace = 3;
 }
