@@ -80,10 +80,10 @@ public class Inventory : MonoBehaviour
 				if (items[i].item != null && items[i].itemIndex != -1)
 				{
 					// Visual for selling item
-
-					items[currentlySelectedItem].item.sprite = null;
-					items[currentlySelectedItem].itemIndex = -1;
-					items[currentlySelectedItem].item.color = new Color(1, 1, 1, 0);
+					Debug.Log("Selling item");
+					items[i].item.sprite = null;
+					items[i].itemIndex = -1;
+					items[i].item.color = new Color(1, 1, 1, 0);
 				}
 			}
 		}
