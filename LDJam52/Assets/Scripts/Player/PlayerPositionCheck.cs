@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class PlayerPositionCheck : MonoBehaviour
 {
     public OxygenTimer oxygenTimer;
     public MovementCardinal movementCardinal;
+
+	public PlayerData pd;
 
     private float xPos;
     private float yPos;
@@ -48,9 +52,9 @@ public class PlayerPositionCheck : MonoBehaviour
 			{
 				movementCardinal.rb.velocity *= 0.5f;
 				GameManager.Instance.gameState = GameState.Default;
+
+				// pd.currentPressure = yPos * -1;
 			}
-
-
         }
     }
 }

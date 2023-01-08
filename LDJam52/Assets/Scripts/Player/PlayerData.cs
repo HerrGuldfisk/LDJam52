@@ -11,6 +11,9 @@ public class PlayerData : MonoBehaviour
 
 	public float oxygenMax = 30f;
 
+	public float pressureMax = 100f;
+	public float currentPressure = 0f;
+
 	public float maxHealth = 100f;
 	public float currentHealth;
 
@@ -23,6 +26,8 @@ public class PlayerData : MonoBehaviour
 	public int currentOxygenLevel = 0;
 	public int currentHullLevel = 0;
 	public int currentPressureLevel = 0;
+
+	public int GAMEMAXDEPTH = 180;
 
 	public void UpgradeOxygen()
 	{

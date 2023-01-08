@@ -10,7 +10,7 @@ public class ShopTexts : MonoBehaviour
 	public List<string> hullUpgrades = new List<string>();
 	public List<string> pressureUpgrades = new List<string>();
 
-	public string upgradeOxygen = $"Upgrade oxygen 50g";
-	public string upgradeHull = "Upgarde hull 50g";
-	public string upgradePressure = "Upgrade pressure 50g";
+	public string upgradeOxygen = $"Upgrade oxygen";
+	public string upgradeHull = "Upgarde hull";
+	public string upgradePressure = "Upgrade pressure";
 }

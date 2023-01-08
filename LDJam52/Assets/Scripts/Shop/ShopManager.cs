@@ -17,6 +17,12 @@ public class ShopManager : MonoBehaviour
 	public PlayerData pd;
 	public TextMeshProUGUI moneyField;
 
+	public TextMeshProUGUI header;
+	public TextMeshProUGUI explanation;
+
+	public OxygenTimer oxygenTimer;
+
+
 	void Start()
     {
 
@@ -28,9 +34,14 @@ public class ShopManager : MonoBehaviour
 
     }
 
+	private void OnEnable()
+	{
+		SetSelectedOption();
+	}
+
 	void OnUpDown(InputValue value)
 	{
-		if(value.Get<float>() == 0)
+		if(value.Get<float>() >= -0.2f && value.Get<float>() <= 0.2f)
 		{
 			allowInput = true;
 			return;
@@ -65,6 +76,23 @@ public class ShopManager : MonoBehaviour
 		}
 
 		backgrounds[selectedObject].SetActive(true);
+
+		switch (selectedObject)
+		{
+			case 0:
+				header.text = shopTexts.upgradeOxygen + $" {50 + (100 * (pd.currentOxygenLevel * pd.currentOxygenLevel))}" + "g";
+				explanation.text = shopTexts.oxygenUpgrades[pd.currentOxygenLevel];
+				break;
+			case 1:
+				header.text = shopTexts.upgradeHull + $" {50 + (100 * (pd.currentHullLevel * pd.currentHullLevel))}" + "g";
+				explanation.text = shopTexts.hullUpgrades[pd.currentHullLevel];
+				break;
+			case 2:
+				header.text = shopTexts.upgradePressure + $" {50 + (100 * (pd.currentPressureLevel * pd.currentPressureLevel))}" + "g";
+				explanation.text = shopTexts.pressureUpgrades[pd.currentPressureLevel];
+				break;
+		}
+
 	}
 
 	void OnOpen()
@@ -74,7 +102,12 @@ public class ShopManager : MonoBehaviour
 			case 0:
 				UpgradeOxygen();
 				break;
-
+			case 1:
+				UpgradeHull();
+				break;
+			case 2:
+				UpgradePressure();
+				break;
 		}
 	}
 
@@ -82,16 +115,51 @@ public class ShopManager : MonoBehaviour
 	{
 		if(pd.currentOxygenLevel < 2)
 		{
-			if (pd.currentMoney >= 50 + (100 * pd.currentOxygenLevel))
+			if (pd.currentMoney >= 50 + (100 * (pd.currentOxygenLevel * pd.currentOxygenLevel)))
 			{
-				pd.currentMoney -= 50 + (100 * pd.currentOxygenLevel);
+				oxygenTimer.UpdateOxygenMaxLimit(pd.oxygenUpgrades[pd.currentOxygenLevel]);
+
+				pd.currentMoney -= 50 + (100 * (pd.currentOxygenLevel * pd.currentOxygenLevel));
 				pd.oxygenMax = pd.oxygenUpgrades[pd.currentOxygenLevel];
 				pd.currentOxygenLevel += 1;
-				shopTexts.upgradeOxygen = $"Upgrade Oxygen {50 + (100 * pd.currentOxygenLevel)}";
+				shopTexts.upgradeOxygen = $"Upgrade Oxygen Tank";
 				moneyField.text = pd.currentMoney.ToString() + "g";
+				SetSelectedOption();
+				//{50 + (100 * (pd.currentOxygenLevel * pd.currentOxygenLevel))}
 			}
 		}
+	}
 
+	void UpgradeHull()
+	{
+		if (pd.currentHullLevel < 2)
+		{
+			if (pd.currentMoney >= 50 + (100 * (pd.currentHullLevel * pd.currentHullLevel)))
+			{
+				pd.currentMoney -= 50 + (100 * (pd.currentHullLevel * pd.currentHullLevel));
+				pd.maxHealth = pd.hullUpgrades[pd.currentHullLevel];
+				pd.currentHealth = pd.maxHealth;
+				pd.currentHullLevel += 1;
+				shopTexts.upgradeHull = $"Upgrade Hull Strength {50 + (100 * (pd.currentHullLevel * pd.currentHullLevel))}";
+				moneyField.text = pd.currentMoney.ToString() + "g";
+				SetSelectedOption();
+			}
+		}
+	}
 
+	void UpgradePressure()
+	{
+		if (pd.currentPressureLevel < 2)
+		{
+			if (pd.currentMoney >= 50 + (100 * (pd.currentPressureLevel * pd.currentPressureLevel)))
+			{
+				pd.currentMoney -= 50 + (100 * (pd.currentPressureLevel * pd.currentPressureLevel));
+				pd.pressureMax = pd.pressureUpgrades[pd.currentPressureLevel];
+				pd.currentPressureLevel += 1;
+				shopTexts.upgradePressure = $"Upgrade Pressure {50 + (100 * (pd.currentPressureLevel * pd.currentPressureLevel))}";
+				moneyField.text = pd.currentMoney.ToString() + "g";
+				SetSelectedOption();
+			}
+		}
 	}
 }

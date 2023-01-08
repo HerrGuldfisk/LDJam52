@@ -71,16 +71,16 @@ public class OxygenTimer : MonoBehaviour
         timerIsRunning = false;
     }
 
-    public void UpdateOxygenMaxLimit()
+    public void UpdateOxygenMaxLimit(float value)
     {
-        maxTime = pd.oxygenMax;
+        maxTime = value;
         oxygenBar.maxValue = maxTime;
     }
 
     public void ResetTimer()
     {
         PauseTimer();
-        UpdateOxygenMaxLimit();
+        UpdateOxygenMaxLimit(maxTime);
         timeRemaining = maxTime;
         StartTimer();
     }

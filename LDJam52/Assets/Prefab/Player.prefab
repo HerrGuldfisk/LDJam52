@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pd: {fileID: 8619164726561995493}
+  player: {fileID: 0}
 --- !u!1 &8619164726561995489
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oxygenTimer: {fileID: 0}
   movementCardinal: {fileID: 8619164726561995488}
+  pressureManager: {fileID: 2244561274949711830, guid: af650e7c05e162e47bfe526c66a0a246, type: 3}
 --- !u!114 &8619164726561995493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,12 +348,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc539f8e9fda314fa1f1b9b1e08d696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentMoney: 200
   cardinalSpeedMAX: 5
   cardinalAccelleration: 1.5
   oxygenMax: 30
+  pressureMax: 100
+  currentPressure: 0
   maxHealth: 100
   currentHealth: 0
   inventorySpace: 3
+  oxygenUpgrades: []
+  hullUpgrades: []
+  pressureUpgrades: []
+  currentOxygenLevel: 0
+  currentHullLevel: 0
+  currentPressureLevel: 0
 --- !u!50 &8619164726561995492
 Rigidbody2D:
   serializedVersion: 4
