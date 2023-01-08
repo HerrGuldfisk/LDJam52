@@ -12,5 +12,6 @@ public enum GameState
 	Default,
 	Airbourne,
 	Death,
-	Shop
+	Shop,
+	Dialogue
 }
