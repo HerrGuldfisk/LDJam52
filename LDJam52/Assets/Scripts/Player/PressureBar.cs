@@ -9,6 +9,11 @@ public class PressureBar : MonoBehaviour
 
 	public PlayerData pd;
 
+    private void Start()
+    {
+		pd.pressureMax = pd.GAMEMAXDEPTH/4;
+    }
+
     // Update is called once per frame
     void Update()
     {

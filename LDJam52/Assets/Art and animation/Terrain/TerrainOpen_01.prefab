@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 4007318317470140835}
   m_Layer: 3
   m_Name: FlatPlatform (2)
-  m_TagString: Untagged
+  m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,9 +181,9 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0.45
   m_Points:
-  - {x: -1.6484188, y: -0.011340617}
-  - {x: 0.06704366, y: -0.011340621}
-  - {x: 1.6691002, y: -0.011340617}
+  - {x: -2, y: -0.0009999936}
+  - {x: 1.9490371, y: -0.0009999936}
+  - {x: 2, y: -0.0009999936}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
