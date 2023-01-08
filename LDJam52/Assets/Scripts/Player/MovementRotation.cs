@@ -24,7 +24,7 @@ public class MovementRotation : MonoBehaviour
     {
         if (GameManager.Instance.gameState == GameState.Default)
         {
-            rb.AddTorque(rotateDir * Time.deltaTime * 100);
+            rb.AddTorque(rotateDir * Time.deltaTime * 200);
         }
     }
 }
