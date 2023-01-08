@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
+	public int currentMoney = 200;
+
 	public float cardinalSpeedMAX = 5f;
 	public float cardinalAccelleration = 1.5f;
 
@@ -13,4 +15,17 @@ public class PlayerData : MonoBehaviour
 	public float currentHealth;
 
 	public int inventorySpace = 3;
+
+	public List<float> oxygenUpgrades = new List<float>();
+	public List<float> hullUpgrades = new List<float>();
+	public List<float> pressureUpgrades = new List<float>();
+
+	public int currentOxygenLevel = 0;
+	public int currentHullLevel = 0;
+	public int currentPressureLevel = 0;
+
+	public void UpgradeOxygen()
+	{
+		//if()
+	}
 }

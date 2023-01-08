@@ -11,5 +11,6 @@ public enum GameState
 {
 	Default,
 	Airbourne,
-	Death
+	Death,
+	Shop
 }

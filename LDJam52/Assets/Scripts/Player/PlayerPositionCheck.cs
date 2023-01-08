@@ -44,7 +44,13 @@ public class PlayerPositionCheck : MonoBehaviour
         }
         else
         {
-            GameManager.Instance.gameState = GameState.Default;
+			if(GameManager.Instance.gameState == GameState.Airbourne)
+			{
+				movementCardinal.rb.velocity *= 0.5f;
+				GameManager.Instance.gameState = GameState.Default;
+			}
+
+
         }
     }
 }

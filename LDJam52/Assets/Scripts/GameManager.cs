@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class GameManager : MonoBehaviour
 
 	public List<Sprite> images = new List<Sprite>();
 	public List<GameObject> items = new List<GameObject>();
+
+	public GameObject damageText;
+	public GameObject moneyText;
 
 	public void Awake()
 	{
@@ -38,6 +42,6 @@ public class GameManager : MonoBehaviour
 
 	public Sprite GetImage(Pickables item)
 	{
-		return images[item.index];
+		return images[item.Index];
 	}
 }

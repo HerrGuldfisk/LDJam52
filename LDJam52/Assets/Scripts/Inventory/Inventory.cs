@@ -84,7 +84,7 @@ public class Inventory : MonoBehaviour
 			if (items[i].item.sprite == null)
 			{
 				items[i].item.sprite = GameManager.Instance.GetImage(item);
-				items[i].itemIndex = item.index;
+				items[i].itemIndex = item.Index;
 				items[i].item.color = new Color(1, 1, 1, 1);
 				Destroy(item.gameObject);
 				return;
@@ -101,7 +101,10 @@ public class Inventory : MonoBehaviour
 				if (items[i].item != null && items[i].itemIndex != -1)
 				{
 					// Visual for selling item
-					Debug.Log("Selling item");
+
+					Vector2 randomOffset = new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f));
+					GameObject textObject = Instantiate(GameManager.Instance.moneyText, player.transform.position + (Vector3)randomOffset, Quaternion.identity);
+					textObject.GetComponent<PopupText>().textfield.text = GameManager.Instance.items[items[i].itemIndex].GetComponent<Pickables>().Value.ToString();
 					items[i].item.sprite = null;
 					items[i].itemIndex = -1;
 					items[i].item.color = new Color(1, 1, 1, 0);

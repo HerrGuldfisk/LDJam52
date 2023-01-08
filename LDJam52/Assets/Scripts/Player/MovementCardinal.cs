@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class MovementCardinal : MonoBehaviour
 {
 	PlayerData playerData;
-	Rigidbody2D rb;
+	public Rigidbody2D rb;
 
 	public bool inBase;
 

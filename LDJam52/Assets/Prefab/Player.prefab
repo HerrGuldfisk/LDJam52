@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 634324453078793447}
   - component: {fileID: 3079396858204336644}
   - component: {fileID: 1370984326}
+  - component: {fileID: 8347092499818753687}
   m_Layer: 6
   m_Name: Claw
   m_TagString: Untagged
@@ -114,8 +115,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18a0245c773f9049b152b6fe3396d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 2772310943079220757, guid: 96e3babd76a09884f9dadc9dfd4f0d93, type: 3}
+  inventory: {fileID: 0}
 --- !u!114 &1370984326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7738436673344908677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 43791153459dd8546a05c2390b9c653b, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: General
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &8347092499818753687
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,6 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd325a839377cbf4286414ee0cc25791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   inBase: 0
 --- !u!114 &9012319854560156793
 MonoBehaviour:
@@ -300,8 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 860637992e17b4548996530e7f8f2168, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oxygenTimer: {fileID: 4024642077405233623, guid: 525cfff6043e5ff438d2bce9fcb4d2cf, type: 3}
-  movementCardinal: {fileID: 0}
+  oxygenTimer: {fileID: 0}
+  movementCardinal: {fileID: 8619164726561995488}
 --- !u!114 &8619164726561995493
 MonoBehaviour:
   m_ObjectHideFlags: 0
