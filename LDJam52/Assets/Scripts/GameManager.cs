@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
 	public static GameManager Instance;
 
-	public GameState gameState = GameState.Default;
+	public GameState gameState = GameState.Dialogue;
 
 	public List<Sprite> images = new List<Sprite>();
 	public List<GameObject> items = new List<GameObject>();
