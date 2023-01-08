@@ -2526,6 +2526,29 @@ MonoBehaviour:
   - You just need to bring the goodies back to me.
   - I will take care of the hard work of selling the wet stuff.
   - You follow, Shark Bait?
+  - Now listen close. I'll give you a brief introduction to the controls of Betty..
+  - You fill the water tanks and dive deeper with "S key" or "Left Stick DOWN". Release
+    water and move towards the surface with "W key" or "Left Stick UP".
+  - To accelate to the left use "A key" or "Left Stick LEFT", and to the right use
+    "D key" or "Left Stick RIGHT".
+  - You harvest using "Left Mouse Button" or "A Button".
+  - These are the very basics.. Even someone like you should be able to grasp this.
+  - Now, you need to keep an eye on your Hull damage bar, the Oxygen meter and the
+    Pressure meter. Don't dive too deep or for too long...
+  - 'We don''t want to lose the submarine. I don''t think your life insurance will
+    cover it... '
+  - You should have about 30 seconds of air in there, to start with. Come back to
+    the surface to refill your Oxygen tanks.
+  - You get it, Shark Bait?
+  - Don't die on the first day, please... the paperwork... God I hate paperwork...
+  - ...
+  - 'There is something else I need you to help me with... You must retrieve something
+    from the bottom of this trench... '
+  - You might need better equipment to reach it. Let's strike a deal.
+  - I will help you get repairs and upgrade the submarine. You will fetch what I'm
+    looking for, what is rightfully mine...
+  - I will be able to trade some of these goods on the side. The profit depends on
+    the rarity, of course...
   textSpeed: 0.1
   image: {fileID: 1128803347}
   inputField: {fileID: 115345104}
