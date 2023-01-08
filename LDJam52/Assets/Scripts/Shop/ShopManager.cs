@@ -125,7 +125,6 @@ public class ShopManager : MonoBehaviour
 				shopTexts.upgradeOxygen = $"Upgrade Oxygen Tank";
 				moneyField.text = pd.currentMoney.ToString() + "g";
 				SetSelectedOption();
-				//{50 + (100 * (pd.currentOxygenLevel * pd.currentOxygenLevel))}
 			}
 		}
 	}
@@ -140,7 +139,7 @@ public class ShopManager : MonoBehaviour
 				pd.maxHealth = pd.hullUpgrades[pd.currentHullLevel];
 				pd.currentHealth = pd.maxHealth;
 				pd.currentHullLevel += 1;
-				shopTexts.upgradeHull = $"Upgrade Hull Strength {50 + (100 * (pd.currentHullLevel * pd.currentHullLevel))}";
+				shopTexts.upgradeHull = $"Upgrade Hull Strength";
 				moneyField.text = pd.currentMoney.ToString() + "g";
 				SetSelectedOption();
 			}
@@ -156,7 +155,7 @@ public class ShopManager : MonoBehaviour
 				pd.currentMoney -= 50 + (100 * (pd.currentPressureLevel * pd.currentPressureLevel));
 				pd.pressureMax = pd.pressureUpgrades[pd.currentPressureLevel];
 				pd.currentPressureLevel += 1;
-				shopTexts.upgradePressure = $"Upgrade Pressure {50 + (100 * (pd.currentPressureLevel * pd.currentPressureLevel))}";
+				shopTexts.upgradePressure = $"Upgrade Pressure";
 				moneyField.text = pd.currentMoney.ToString() + "g";
 				SetSelectedOption();
 			}
