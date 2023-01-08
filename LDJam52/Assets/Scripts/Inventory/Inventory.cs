@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 
 public class Inventory : MonoBehaviour
 {
 	List<InventorySlot> items = new List<InventorySlot>();
 	private int currentlySelectedItem = 0;
 	public Transform player;
+	public TextMeshProUGUI moneyText;
+	public PlayerData pd;
 
     void Start()
     {
@@ -19,6 +23,8 @@ public class Inventory : MonoBehaviour
 				inventorySlot.GetComponent<InventorySlot>().HideOutline();
 			}
 		}
+
+		moneyText.text = pd.currentMoney.ToString() + " G";
 
 		SetSelectedItem(0);
 	}
@@ -105,6 +111,8 @@ public class Inventory : MonoBehaviour
 					Vector2 randomOffset = new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f));
 					GameObject textObject = Instantiate(GameManager.Instance.moneyText, player.transform.position + (Vector3)randomOffset, Quaternion.identity);
 					textObject.GetComponent<PopupText>().textfield.text = GameManager.Instance.items[items[i].itemIndex].GetComponent<Pickables>().Value.ToString();
+					pd.currentMoney += GameManager.Instance.items[items[i].itemIndex].GetComponent<Pickables>().Value;
+					moneyText.text = pd.currentMoney.ToString() + " G";
 					items[i].item.sprite = null;
 					items[i].itemIndex = -1;
 					items[i].item.color = new Color(1, 1, 1, 0);
