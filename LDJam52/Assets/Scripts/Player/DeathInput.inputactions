@@ -1,0 +1,44 @@
+{
+    "name": "DeathInput",
+    "maps": [
+        {
+            "name": "General",
+            "id": "4ef94c69-485f-42c8-981b-d7426215cdbe",
+            "actions": [
+                {
+                    "name": "Respawn",
+                    "type": "Button",
+                    "id": "4214b858-c8a7-4dd6-a675-0ba0c26450ff",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "69351077-4930-4ee1-bc29-22f57bd373a3",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Respawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a6521d5d-7a75-4eac-9480-c66b0f756473",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Respawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -18,6 +18,8 @@ public class OxygenTimer : MonoBehaviour
 
     public static OxygenTimer instance;
 
+	public DeathScreen deathScreen;
+
     private void Awake()
     {
         instance = this;
@@ -37,7 +39,7 @@ public class OxygenTimer : MonoBehaviour
     {
         if (!regenOxygen)
         {
-            if (timerIsRunning)
+            if (timerIsRunning && GameManager.Instance.gameState != GameState.Dialogue)
             {
                 if (timeRemaining > 0)
                 {
@@ -93,5 +95,7 @@ public class OxygenTimer : MonoBehaviour
         PauseTimer();
 
         GameManager.Instance.gameState = GameState.Death;
+
+		deathScreen.ShowDeathScreen();
     }
 }

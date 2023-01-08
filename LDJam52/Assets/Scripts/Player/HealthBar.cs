@@ -13,6 +13,8 @@ public class HealthBar : MonoBehaviour
 
     public PlayerData pd;
 
+	public DeathScreen deathScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,5 +38,6 @@ public class HealthBar : MonoBehaviour
     private void OutOfHealth()
     {
         GameManager.Instance.gameState = GameState.Death;
+		deathScreen.ShowDeathScreen();
     }
 }

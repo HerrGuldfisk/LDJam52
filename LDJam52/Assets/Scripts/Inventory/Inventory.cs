@@ -7,21 +7,31 @@ using TMPro;
 
 public class Inventory : MonoBehaviour
 {
-	List<InventorySlot> items = new List<InventorySlot>();
+	public List<InventorySlot> items = new List<InventorySlot>();
 	private int currentlySelectedItem = 0;
 	public Transform player;
 	public TextMeshProUGUI moneyText;
 	public PlayerData pd;
 
+	/*
     void Start()
     {
-		foreach(Transform inventorySlot in transform)
+		foreach(InventorySlot inventorySlot in items)
 		{
-			if (inventorySlot.GetComponent<InventorySlot>())
-			{
-				items.Add(inventorySlot.GetComponent<InventorySlot>());
-				inventorySlot.GetComponent<InventorySlot>().HideOutline();
-			}
+			inventorySlot.HideOutline();
+		}
+
+		moneyText.text = pd.currentMoney.ToString() + " G";
+
+		SetSelectedItem(0);
+	}
+	*/
+
+	private void OnEnable()
+	{
+		foreach (InventorySlot inventorySlot in items)
+		{
+			inventorySlot.HideOutline();
 		}
 
 		moneyText.text = pd.currentMoney.ToString() + " G";
@@ -29,7 +39,7 @@ public class Inventory : MonoBehaviour
 		SetSelectedItem(0);
 	}
 
-    void SetSelectedItem(int number)
+	void SetSelectedItem(int number)
 	{
 		currentlySelectedItem = number;
 
