@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 3768903731919316228}
   - component: {fileID: 3768903731919316229}
   - component: {fileID: 3768903731919316346}
-  - component: {fileID: 2988773960595074524}
-  - component: {fileID: 8327436284893205071}
+  - component: {fileID: 149653813719037746}
+  - component: {fileID: 3835476052700869071}
   m_Layer: 0
-  m_Name: Coral
+  m_Name: Sea Weed
   m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ec56b3975f41caa41b9c231a470497e2, type: 3}
-  m_Color: {r: 0.9339623, g: 0.43614274, b: 0.7353882, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 199a40b48c4499040bb5557fceed4bcf, type: 3}
+  m_Color: {r: 0.2086539, g: 0.9245283, b: 0.11774653, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,20 +99,20 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.046922445, y: 0.06564903}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3, y: 3}
+    oldSize: {x: 1, y: 3}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.816751, y: 1.8737411}
+  m_Size: {x: 0.82, y: 2.96}
   m_EdgeRadius: 0
---- !u!114 &2988773960595074524
+--- !u!114 &149653813719037746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,10 +121,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3768903731919316347}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 386e73d0c7b861f4abdb098374109edb, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bfd53549e808744e9cd840f53c42f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &8327436284893205071
+--- !u!95 &3835476052700869071
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0

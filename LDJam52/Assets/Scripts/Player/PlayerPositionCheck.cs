@@ -52,9 +52,9 @@ public class PlayerPositionCheck : MonoBehaviour
 			{
 				movementCardinal.rb.velocity *= 0.5f;
 				GameManager.Instance.gameState = GameState.Default;
-
-				// pd.currentPressure = yPos * -1;
 			}
+
+            pd.currentPressure = yPos * -1;
         }
     }
 }

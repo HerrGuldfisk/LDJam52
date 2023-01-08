@@ -41,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Hitbox
+    uniqueID: 1069569185
+    locked: 0
   - name: BG
     uniqueID: 3368821749
     locked: 0
