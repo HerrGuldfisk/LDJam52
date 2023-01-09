@@ -45,14 +45,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: 0
   images:
-  - {fileID: 21300000, guid: ec56b3975f41caa41b9c231a470497e2, type: 3}
+  - {fileID: 21300000, guid: 17945765ed12714478bee66362ec33c7, type: 3}
   - {fileID: 21300000, guid: 199a40b48c4499040bb5557fceed4bcf, type: 3}
   - {fileID: 21300000, guid: 1caaa2af7fdfe1042b70719f648a11f1, type: 3}
   - {fileID: 21300000, guid: 82624a1f2f6824941946927393cf4931, type: 3}
+  - {fileID: 21300000, guid: 4494347f9f9408344ae010c242313bbd, type: 3}
+  - {fileID: 21300000, guid: 013b9bffe4d7ac14cab0fcf487659515, type: 3}
   items:
   - {fileID: 3768903731919316347, guid: c491dad93ae55d94ea28b57cd49af0c5, type: 3}
   - {fileID: 3768903731919316347, guid: 1c1e84d845412db4ea8f6e2c34688e6b, type: 3}
   - {fileID: 3768903731919316347, guid: a56faf92aa801604cb4eb8b2e1d98a52, type: 3}
   - {fileID: 6749100607719611044, guid: dd4e50b40c7eae94191eb67a6af3da0a, type: 3}
+  - {fileID: 3186963605258239900, guid: f3d42ddf0250167449e03f0cd25f4925, type: 3}
+  - {fileID: 162013568097631977, guid: 8977e728eaa2f654381e3a7cd1d39a42, type: 3}
   damageText: {fileID: 5864395327222253871, guid: 4715f92dacf484f4d8adda9fb5beb4d1, type: 3}
   moneyText: {fileID: 5864395327222253871, guid: ff65f211f83f730479500806780d5af1, type: 3}

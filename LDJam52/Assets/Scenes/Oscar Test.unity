@@ -53910,25 +53910,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8986595390361528039, guid: b7eb29bf6cf5a4344bb7738e52058ba7, type: 3}
-      propertyPath: items.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8986595390361528039, guid: b7eb29bf6cf5a4344bb7738e52058ba7, type: 3}
-      propertyPath: images.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8986595390361528039, guid: b7eb29bf6cf5a4344bb7738e52058ba7, type: 3}
-      propertyPath: items.Array.data[4]
-      value: 
-      objectReference: {fileID: 3186963605258239900, guid: f3d42ddf0250167449e03f0cd25f4925, type: 3}
-    - target: {fileID: 8986595390361528039, guid: b7eb29bf6cf5a4344bb7738e52058ba7, type: 3}
-      propertyPath: images.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 17945765ed12714478bee66362ec33c7, type: 3}
-    - target: {fileID: 8986595390361528039, guid: b7eb29bf6cf5a4344bb7738e52058ba7, type: 3}
-      propertyPath: images.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: 4494347f9f9408344ae010c242313bbd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7eb29bf6cf5a4344bb7738e52058ba7, type: 3}
