@@ -72,9 +72,9 @@ SpriteShapeRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -926145547
+  m_SortingLayer: -1
+  m_SortingOrder: 15
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: e0cb03cd3ad2cff47a9610fbb7664c14, type: 3}
@@ -156,9 +156,9 @@ MonoBehaviour:
   m_AdaptiveUV: 1
   m_StretchUV: 0
   m_WorldSpaceUV: 0
-  m_CornerAngleThreshold: 30
+  m_CornerAngleThreshold: 90
   m_ColliderDetail: 4
-  m_ColliderOffset: 0
+  m_ColliderOffset: 0.368
   m_UpdateCollider: 1
   m_OptimizeCollider: 1
   m_OptimizeGeometry: 1
@@ -190,13 +190,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -2.447, y: -2.447}
-      - {x: -2.447, y: 2.447}
-      - {x: 2.447, y: 2.447}
-      - {x: 2.447, y: -2.447}
-      - {x: -1.4617777, y: -2.447}
-      - {x: -1.5, y: -2.447}
-      - {x: -2.447, y: -2.447}
+    - - {x: -2.375, y: -2.375}
+      - {x: -2.375, y: 2.375}
+      - {x: 2.375, y: 2.375}
+      - {x: 2.375, y: -2.375}
+      - {x: -1.4617777, y: -2.375}
+      - {x: -1.5, y: -2.375}
+      - {x: -2.375, y: -2.375}
 --- !u!1 &7322166187786210934
 GameObject:
   m_ObjectHideFlags: 0
