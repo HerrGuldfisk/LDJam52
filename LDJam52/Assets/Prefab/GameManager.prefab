@@ -51,6 +51,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 82624a1f2f6824941946927393cf4931, type: 3}
   - {fileID: 21300000, guid: 4494347f9f9408344ae010c242313bbd, type: 3}
   - {fileID: 21300000, guid: 013b9bffe4d7ac14cab0fcf487659515, type: 3}
+  - {fileID: 21300000, guid: cd1b8041dcfd39d4384303137d4bed8d, type: 3}
+  - {fileID: 21300000, guid: e68f203c59c31be449bc91bf4cd38fff, type: 3}
   items:
   - {fileID: 3768903731919316347, guid: c491dad93ae55d94ea28b57cd49af0c5, type: 3}
   - {fileID: 3768903731919316347, guid: 1c1e84d845412db4ea8f6e2c34688e6b, type: 3}
@@ -58,5 +60,7 @@ MonoBehaviour:
   - {fileID: 6749100607719611044, guid: dd4e50b40c7eae94191eb67a6af3da0a, type: 3}
   - {fileID: 3186963605258239900, guid: f3d42ddf0250167449e03f0cd25f4925, type: 3}
   - {fileID: 162013568097631977, guid: 8977e728eaa2f654381e3a7cd1d39a42, type: 3}
+  - {fileID: 8517599654528558736, guid: ea2722e4d67be7445a04c901bf22329e, type: 3}
+  - {fileID: 2798597084712040207, guid: 47a9b020a0efd4f45917d365717da070, type: 3}
   damageText: {fileID: 5864395327222253871, guid: 4715f92dacf484f4d8adda9fb5beb4d1, type: 3}
   moneyText: {fileID: 5864395327222253871, guid: ff65f211f83f730479500806780d5af1, type: 3}

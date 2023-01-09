@@ -102,6 +102,10 @@ public class Inventory : MonoBehaviour
 				items[i].item.sprite = GameManager.Instance.GetImage(item);
 				items[i].itemIndex = item.Index;
 				items[i].item.color = new Color(1, 1, 1, 1);
+				if (item as Barbara != null)
+				{
+					// Trigger dialogue from Captain
+				}
 				Destroy(item.gameObject);
 				return;
 			}
@@ -117,6 +121,11 @@ public class Inventory : MonoBehaviour
 				if (items[i].item != null && items[i].itemIndex != -1)
 				{
 					// Visual for selling item
+
+					if(items[i].itemIndex == 7)
+					{
+						Debug.Log("Won Game");
+					}
 
 					Vector2 randomOffset = new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f));
 					GameObject textObject = Instantiate(GameManager.Instance.moneyText, player.transform.position + (Vector3)randomOffset, Quaternion.identity);
