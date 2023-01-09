@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.Audio;
 
 public class Dialogue : MonoBehaviour
 {
@@ -29,6 +30,14 @@ public class Dialogue : MonoBehaviour
     public GameObject MoneyCanvas;
     public GameObject GeneralUI;
 
+    public List<AudioClip> clips = new List<AudioClip>();
+
+    AudioSource source;
+
+    public bool playOnAwake = false;
+
+    bool Talk;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,12 +47,17 @@ public class Dialogue : MonoBehaviour
         initCol = image.color;
         image.color = Color.black;
 
+        source = GetComponent<AudioSource>();
+        source.volume = 0.7f;
+
         inputField.SetActive(false);
         StartDialogue();
     }
 
     void OnStepDialogue()
     {
+        TryPlaySound();
+
         if (index > 1)
         {
             image.color = initCol;
@@ -119,5 +133,27 @@ public class Dialogue : MonoBehaviour
             GameManager.Instance.gameState = GameState.Default;
             gameObject.SetActive(false);
         }
+    }
+
+    void TryPlaySound()
+    {
+        if (playOnAwake && Talk)
+        {
+            RandomPhrase();
+        }
+        else
+        {
+            Talk = true;
+        }
+    }
+
+    public void RandomPhrase()
+    {
+        if (source.isPlaying)
+        {
+            source.Stop();
+        }
+        int index = Random.Range(0, clips.Count);
+        source.PlayOneShot(clips[index]);
     }
 }
