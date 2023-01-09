@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 162013568097631959}
   - component: {fileID: 162013568097631976}
   m_Layer: 0
-  m_Name: Fossile_2
+  m_Name: Fossile_1
   m_TagString: Pickable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
