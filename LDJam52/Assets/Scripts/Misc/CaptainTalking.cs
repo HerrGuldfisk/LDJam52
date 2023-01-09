@@ -15,6 +15,7 @@ public class CaptainTalking : MonoBehaviour
     void Start()
     {
 		source = GetComponent<AudioSource>();
+		source.volume = 0.7f;
     }
 
     // Update is called once per frame

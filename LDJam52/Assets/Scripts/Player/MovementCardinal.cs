@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Audio;
 
 public class MovementCardinal : MonoBehaviour
 {
+	public AudioSource audioSource;
+
 	PlayerData playerData;
 	public Rigidbody2D rb;
 
@@ -47,7 +50,6 @@ public class MovementCardinal : MonoBehaviour
 			float factor = (Vector2.Dot(rb.velocity.normalized, direction) - 2) * -1;
 
 			rb.velocity += factor * currentAcceleration * Time.fixedDeltaTime;
-
 		}
 		else
 		{
@@ -58,6 +60,8 @@ public class MovementCardinal : MonoBehaviour
 		{
 			rb.velocity = rb.velocity.normalized * playerData.cardinalSpeedMAX;
 		}
+
+		// audioSource.volume = Mathf.Clamp((rb.velocity.magnitude / playerData.cardinalSpeedMAX), 0.5f, 1f);
 	}
 
 	public void TurnOnGravity()
