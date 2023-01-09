@@ -13,6 +13,8 @@ public class Inventory : MonoBehaviour
 	public TextMeshProUGUI moneyText;
 	public PlayerData pd;
 
+	public WinScreen winScreen;
+
 	/*
     void Start()
     {
@@ -124,6 +126,7 @@ public class Inventory : MonoBehaviour
 
 					if(items[i].itemIndex == 7)
 					{
+						winScreen.ShowDeathScreen();
 						Debug.Log("Won Game");
 					}
 
