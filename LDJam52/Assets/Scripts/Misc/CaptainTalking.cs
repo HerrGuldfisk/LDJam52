@@ -11,6 +11,8 @@ public class CaptainTalking : MonoBehaviour
 
 	public bool playOnAwake = false;
 
+	bool Talk;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +34,13 @@ public class CaptainTalking : MonoBehaviour
 
 	private void OnEnable()
 	{
-		if (playOnAwake)
+		if (playOnAwake && Talk)
 		{
 			RandomPhrase();
+		}
+		else
+		{
+			Talk = true;
 		}
 	}
 }

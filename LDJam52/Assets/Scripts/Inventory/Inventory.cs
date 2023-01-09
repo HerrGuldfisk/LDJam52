@@ -15,6 +15,8 @@ public class Inventory : MonoBehaviour
 
 	public WinScreen winScreen;
 
+	bool firstRun = true;
+
 	/*
     void Start()
     {
@@ -31,6 +33,12 @@ public class Inventory : MonoBehaviour
 
 	private void OnEnable()
 	{
+		if (firstRun)
+		{
+			firstRun = false;
+			return;
+		}
+
 		foreach (InventorySlot inventorySlot in items)
 		{
 			inventorySlot.HideOutline();

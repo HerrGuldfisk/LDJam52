@@ -11,7 +11,7 @@ public class PressureBar : MonoBehaviour
 
     private void Start()
     {
-		pd.pressureMax = pd.GAMEMAXDEPTH/4;
+		pd.pressureMax = 40;
     }
 
     // Update is called once per frame

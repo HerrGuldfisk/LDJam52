@@ -12,6 +12,7 @@ public class InventorySlot : MonoBehaviour
 	private void Start()
 	{
 		selector = transform.GetChild(0).gameObject;
+		HideOutline();
 	}
 
 	public void ShowOutline()
