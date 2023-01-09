@@ -80,14 +80,17 @@ public class ShopManager : MonoBehaviour
 		switch (selectedObject)
 		{
 			case 0:
+				if(pd.currentOxygenLevel == 3) { return; }
 				header.text = shopTexts.upgradeOxygen + $" {50 + (100 * (pd.currentOxygenLevel * pd.currentOxygenLevel))}" + "g";
 				explanation.text = shopTexts.oxygenUpgrades[pd.currentOxygenLevel];
 				break;
 			case 1:
+				if (pd.currentHullLevel == 3) { return; }
 				header.text = shopTexts.upgradeHull + $" {50 + (100 * (pd.currentHullLevel * pd.currentHullLevel))}" + "g";
 				explanation.text = shopTexts.hullUpgrades[pd.currentHullLevel];
 				break;
 			case 2:
+				if (pd.currentPressureLevel == 3) { return; }
 				header.text = shopTexts.upgradePressure + $" {50 + (100 * (pd.currentPressureLevel * pd.currentPressureLevel))}" + "g";
 				explanation.text = shopTexts.pressureUpgrades[pd.currentPressureLevel];
 				break;
@@ -113,7 +116,7 @@ public class ShopManager : MonoBehaviour
 
 	void UpgradeOxygen()
 	{
-		if(pd.currentOxygenLevel < 2)
+		if(pd.currentOxygenLevel < 3)
 		{
 			if (pd.currentMoney >= 50 + (100 * (pd.currentOxygenLevel * pd.currentOxygenLevel)))
 			{
@@ -131,7 +134,7 @@ public class ShopManager : MonoBehaviour
 
 	void UpgradeHull()
 	{
-		if (pd.currentHullLevel < 2)
+		if (pd.currentHullLevel < 3)
 		{
 			if (pd.currentMoney >= 50 + (100 * (pd.currentHullLevel * pd.currentHullLevel)))
 			{
@@ -148,7 +151,7 @@ public class ShopManager : MonoBehaviour
 
 	void UpgradePressure()
 	{
-		if (pd.currentPressureLevel < 2)
+		if (pd.currentPressureLevel < 3)
 		{
 			if (pd.currentMoney >= 50 + (100 * (pd.currentPressureLevel * pd.currentPressureLevel)))
 			{

@@ -13,7 +13,7 @@ public class UpdateMoneyUI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(lastMoney == pd.currentMoney)
+        if(lastMoney != pd.currentMoney)
 		{
 			moneyField.text = $"{pd.currentMoney}g";
 			lastMoney = pd.currentMoney;
